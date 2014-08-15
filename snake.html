@@ -8,9 +8,9 @@
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <script type="text/javascript">
         $(function() {
-            $( "#canvas" ).draggable();
+            //$( "#canvas" ).draggable();
             var canvas = document.getElementById('canvas');
-            var lengthOfSnake = 30;
+            var lengthOfSnake = 5;
             $(window).keydown(function(){
                 var key = window.event ? window.event.keyCode : window.event.which;
                 if (key == 38 && snake.direction != 'bottom'){//↑
@@ -39,7 +39,7 @@
         });
 
         var snake = {
-            speed:100,
+            speed: 80,
             gradientColor : [],//渐变色的设置
             snakeBody : [],
             color : '#71C671',
@@ -49,8 +49,8 @@
             numOfCircle : 5,
             context : {},
             world : {
-                        width : 1000,
-                        height : 800,
+                        width : 600,
+                        height : 600,
                         food : {}
                     },
             lock : false,
@@ -59,8 +59,6 @@
             direction : 'right',
             canvas : {},
             alive : true,
-
-
 
             init : function(canvas,context,lengthOfSnake,xCircle,yCircle){
                 this.numOfCircle = lengthOfSnake || this.numOfCircle;
@@ -242,6 +240,7 @@
     </script>
 </head>
 <body style="overflow: hidden">
-<canvas id="canvas" width="1200" height="900" style="position: absolute;border-width: 0"></canvas>
+<canvas id="canvas" width="650" height="650" style="position: absolute;border-width: 0"></canvas>
+
 </body>
 </html>
